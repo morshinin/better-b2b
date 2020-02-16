@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Better b2b-center",
+  "description": "Make b2b-center ux better",
+  "version": "0.1.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.b2b-center.ru/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ]
+}

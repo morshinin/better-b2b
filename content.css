@@ -1,0 +1,475 @@
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+body.light {
+    background-color: #fff;
+}
+
+.inner {
+    max-width: 100%;
+}
+
+/* Шапка */
+.header-main {
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.header-main * {
+    color: #000 !important;
+    font-size: 1.4rem;
+}
+
+.header-main-content {
+    position: relative;
+}
+
+.header-main-left {
+    float: none;
+    margin-right: 0;
+    max-width: 100%;
+    padding-top: 0;
+}
+
+.header-logo {
+    top: -27px;
+}
+
+.header-logo .ico {
+    width: 52px;
+}
+
+.header-main-right * {
+    color: #bebebe !important;
+}
+
+.header-panel {
+    position: relative;
+}
+
+.header-panel * {
+    font-size: 1.2rem;
+}
+
+#ph-user-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-user_ico {
+    position: absolute;
+    right: 0;
+    border: 1px solid;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.header-user_ico:hover {
+    cursor: pointer;
+}
+
+.header-user_ico:after {
+    content: '👤';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-all_user_shit {
+    position: absolute;
+    padding: 20px;
+    background: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 3px;
+    z-index: 4000;
+    right: 0;
+    top: 42px;
+    display: none;
+}
+
+.all_user_shit--active {
+    display: block;
+}
+
+/* Контент */
+.page-main {
+    padding-top: 45px;
+}
+
+.nav-pills, #content .inner > p {
+    font-size: 80%;
+}
+
+.nav-pills + table {
+    margin-top: 70px;
+}
+
+.center .featured-layout h1, .turkey .featured-layout h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.center .featured-layout h2, .turkey .featured-layout h2 {
+    font-size: 18px;
+}
+
+#page {
+    min-width: initial;
+}
+
+.wrapper.featured-layout {
+    background: linear-gradient(70deg, white 60%, rgba(0, 0, 0, 0) 30%), url(https://picsum.photos/id/1026/1200/768);
+    background-size: cover;
+    background-position: 50% 21%;
+}
+
+.center .featured-layout, .center .featured-layout h1, .center .featured-layout h2 {
+    color: #000;
+}
+
+.featured-layout {
+    padding: 180px 0 !important;
+}
+
+.featured-layout .inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured-layout .pull-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.featured-layout .pull-right {
+    margin-left: auto;
+}
+
+
+.featured-layout h1 {
+    min-width: initial;
+    width: initial;
+}
+
+.featured-layout .searchBar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured-layout .searchBar-field {
+    flex: 1;
+}
+
+.featured-layout .searchBar-ctrl {
+    display: block;
+    width: initial;
+}
+
+.featured-layout .form-grp {
+    display: block;
+    width: auto;
+}
+
+/* процедуры */
+.rtype h1.h3 {
+    font-size: 4.8rem;
+    margin-bottom: 2.4rem;
+}
+
+.c1, .c2, table .thead, table .thead h2 {
+    background-color: #fff;
+}
+
+td.fname {
+    text-align: left;
+}
+
+.fname, .c2 td {
+    padding: 10px;
+}
+
+/* Боковая колонка */
+#bets_td * {
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1240px) {
+    .featured-layout .pull-right {
+        margin-left: initial;
+    }
+}
+
+/* Кнопки */
+
+/* Всплывающие подсказки */
+.toast-container.toast-position-top-right {
+    width: 300px;
+}
+
+.toast-item.toast-type-warning {
+    background-color: #fff;
+    border: none;
+    background-image: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    padding: 20px;
+}
+
+.toast-item-image.toast-item-image-warning {
+    top: 50px;
+}
+
+.toast-hide_all.common_button {
+    background-image: none;
+}
+
+.toast-hide_all .common_button-content {
+    background-image: none;
+    color: #2283c3;
+    text-shadow: 0 0 0;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: 16px;
+    height: auto;
+    line-height: inherit;
+}
+
+.notice {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.notice .imp {
+    color: green;
+}
+
+/* Утилиты */
+.isHidden {
+    display: none;
+}
+
+/* Подсказки (хинты) */
+#export_hints_form #xtbody tr:not(:nth-child(-n+3)):not(:last-child) {
+    display: none;
+}
+
+#trade_object_form .hint,
+[action="/market/edit.html?action=docs&do=upload_doc&id=45296"] .hint {
+    color: #bebebe;
+    font-size: 80%;
+}
+
+#trade_object_form .form_thead_title {
+    font-size: 48px;
+}
+
+.form-control_table #help_text_id p {
+    width: 680px;
+}
+
+/* Редактирование хинтов */
+.hint_list_form tbody tr.c1 td {
+    background-color: #fff;
+}
+
+.messagePanel .btn-primary {
+    background-color: transparent;
+    color: #2283c3;
+}
+
+.messagePanel .box {
+    background-color: #fff;
+}
+
+.footer-socials {
+    display: none;
+}
+
+.searchBlock {
+    background-color: transparent;
+    padding: 0;
+}
+
+[data-config*=docs] ~ div .fixCol-left > .row {
+    display: flex;
+}
+
+[data-config*=docs] ~ div pre {
+    margin: 24px 0;
+}
+
+[data-config*=docs] ~ div .content,
+.docs .content {
+    max-width: 680px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+[data-config*=docs] ~ div .content p {
+    margin: 24px 0;
+}
+
+/* Редактирование хинтов */
+.hint_edit .page-main {
+    padding-top: 75px;
+}
+
+.hint_edit .inner {
+    max-width: 100%;
+}
+
+.hint_edit .table-filled tbody tr {
+    box-shadow: 3px 4px 6px rgba(0,0,0,.3);
+}
+
+.hint_edit .table-filled.table-stripes tr:nth-child(2n).c1 td,
+.hint_edit .table-filled.table-stripes tr:nth-child(2n) td {
+    background-color: transparent;
+}
+
+.hint_edit .hint_list_form table {
+    display: block;
+}
+
+.hint_edit .hint_list_form tbody {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1600px) {
+    .hint_edit .hint_list_form tbody {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.hint_edit .c1 a,
+.hint_edit .c1r a,
+.hint_edit td.rmenus a,
+.hint_edit .c2 a,
+.hint_edit td.rmenu a,
+.hint_edit .thead a {
+    color: #2283c3;
+}
+
+.hint_edit .table-filled thead th,
+.hint_edit .table-filled thead td {
+    font-weight: normal;
+}
+
+.hint_edit .nav-pills + table {
+    margin: 0;
+}
+
+.hint_edit .table-filled tbody:before {
+    display: none;
+}
+
+.hint_edit [action="/popups/help.html"] ~ p {
+    display: none;
+}
+
+.hint_edit-span-lang {
+    position: absolute;
+    right: 0;
+    font-size: 80%;
+}
+
+.hint_edit #row_id_4,
+.hint_edit #id_export,
+.hint_edit #id_export_csv,
+.hint_edit #id_not_deleted {
+    display: none;
+}
+
+.header-services-link {
+    float: none;
+    margin-left: 0;
+    top: 3px;
+}
+
+.header-services-link > span {
+    height: 20px;
+    position: relative;
+    width: 30px;
+    display: block;
+    background-image: linear-gradient(transparent 8px, black 8px, black 11px, transparent 11px);
+}
+
+.header-services-link:after,
+.header-services-link:before {
+    content: '';
+    height: 3px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+}
+
+.header-services-link:after {
+    bottom: 0;
+}
+
+.header-title-platform {
+    margin-left: 20px;
+}
+
+.header-main-row:first-child .header-main-right {
+    padding-top: 0;
+}
+
+.page-header {
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+
+.header-main-content {
+    padding: 0;
+}
+
+.header-main-row:first-child {
+    margin: 0;
+}
+
+.header-main > .inner {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    position: relative;
+    top: initial;
+}
+
+.header-logo .icoL {
+    height: 36px;
+}
+
+.site_version--local {
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: 17px;
+    right: 90px;
+    z-index: 3000;
+}
+
+.docs .inner {
+    max-width: 100%;
+}
+
+.docs h1 {
+    font-size: 48px;
+}
+
+.docs .toc {
+    margin: 0;
+}
+
+.tilda_gen .form-desc {
+    color: gray;
+    font-size: 80%;
+}
