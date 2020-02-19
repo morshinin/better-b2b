@@ -15,6 +15,13 @@ function seoAndHeader() {
     document.querySelector('.header-title-platform').remove();
     document.querySelector('.header-logo').remove();
     document.querySelector('.header-services-link > span').innerHTML = '';
+
+    for (const el of document.querySelectorAll('.header-services a')) {
+        const ico = el.querySelector('.header-services-ico');
+        if (ico) {
+            ico.remove();
+        }
+    }
 }
 
 function getRidOfAllBullshit() {
