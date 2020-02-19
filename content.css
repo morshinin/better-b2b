@@ -41,10 +41,6 @@ body.light {
     width: 52px;
 }
 
-.header-main-right * {
-    color: #bebebe !important;
-}
-
 .header-panel {
     position: relative;
 }
@@ -87,13 +83,13 @@ body.light {
     flex-direction: column;
     box-shadow: 0 0 3px;
     z-index: 4000;
-    right: 0;
+    right: -600px;
     top: 42px;
-    display: none;
+    transition: right ease .5s;
 }
 
 .all_user_shit--active {
-    display: block;
+    right: 0;
 }
 
 /* Контент */
@@ -420,6 +416,12 @@ td.fname {
 
 .header-main-row:first-child .header-main-right {
     padding-top: 0;
+}
+
+.header-main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .page-header {

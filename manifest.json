@@ -10,8 +10,10 @@
   "content_scripts": [
     {
       "matches": ["https://*.b2b-center.ru/*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
+      "js": ["content.js"]
     }
+  ],
+  "web_accessible_resources": [
+    "content.css"
   ]
 }

@@ -1,3 +1,12 @@
+function addStyles() {
+    const path = chrome.runtime.getURL('content.css');
+    const style = document.createElement('link');
+    style.setAttribute('href', path);
+    style.setAttribute('rel', 'stylesheet');
+    document.querySelector('head').appendChild(style);
+}
+
+addStyles();
 const page_url = document.URL;
 
 function seoAndHeader() {
