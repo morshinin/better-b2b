@@ -9,7 +9,7 @@
   "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "matches": ["https://*.b2b-center.ru/*"],
+      "matches": ["https://*.b2b-center.ru/*", "https://*.b2b-center.ru.test/*"],
       "js": ["content.js"]
     }
   ],

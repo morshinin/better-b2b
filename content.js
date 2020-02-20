@@ -1,3 +1,7 @@
+const page_url = document.URL;
+
+init();
+
 function addStyles() {
     const path = chrome.runtime.getURL('content.css');
     const style = document.createElement('link');
@@ -6,8 +10,19 @@ function addStyles() {
     document.querySelector('head').appendChild(style);
 }
 
-addStyles();
-const page_url = document.URL;
+function stripSiteVersionLabel() {
+    const strip = document.querySelector('.site_version--local');
+    if (strip) {
+        strip.innerText = 'Локально';
+    }
+}
+
+function init() {
+    seoAndHeader();
+    getRidOfAllBullshit();
+    stripSiteVersionLabel();
+    addStyles();
+}
 
 function seoAndHeader() {
     document.querySelector('title').innerText = `${document.querySelector('h1').innerText} - Локально - B2B-Center`;
@@ -44,6 +59,4 @@ function getRidOfAllBullshit() {
     });
 }
 
-seoAndHeader();
-getRidOfAllBullshit();
 
