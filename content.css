@@ -83,13 +83,13 @@ body.light {
     flex-direction: column;
     box-shadow: 0 0 3px;
     z-index: 4000;
-    right: -600px;
-    top: 42px;
-    transition: right ease .5s;
+    right: 0;
+    top: -400px;
+    transition: top ease .5s;
 }
 
 .all_user_shit--active {
-    right: 0;
+	top: 42px;
 }
 
 /* Контент */
