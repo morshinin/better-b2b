@@ -2,6 +2,10 @@ const page_url = document.URL;
 
 init();
 
+function stripPageFooter() {
+    document.querySelector('.page-footer').innerHTML = '<p class="txt-center">b2b-center.ru &copy 2020</p>';
+}
+
 function addStyles() {
     const path = chrome.runtime.getURL('content.css');
     const style = document.createElement('link');
@@ -21,6 +25,7 @@ function init() {
     seoAndHeader();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
+    stripPageFooter();
     addStyles();
 }
 
