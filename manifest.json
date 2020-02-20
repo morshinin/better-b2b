@@ -10,6 +10,7 @@
   "content_scripts": [
     {
       "matches": ["https://*.b2b-center.ru/*", "https://*.b2b-center.ru.test/*"],
+      "exclude_matches": ["https://jira.b2b-center.ru/*", "https://docs.b2b-center.ru/*"],
       "js": ["content.js"]
     }
   ],
