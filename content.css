@@ -450,7 +450,7 @@ td.fname {
     height: 36px;
 }
 
-.site_version--local {
+.site_version {
     display: inline-block;
     padding: 0 10px;
     position: absolute;

@@ -15,11 +15,12 @@ function addStyles() {
 }
 
 function stripSiteVersionLabel() {
-    const strip = document.querySelector('.site_version--local');
-    if (strip) {
-        strip.innerText = 'Локально';
+    const ver = document.querySelector(`.site_version`);
+    if (ver.classList.contains('site_version--local')) {
+        ver.innerText = 'Локально';
+    } else if (ver.classList.contains('site_version--beta'))
+        ver.innerText = 'Бета версия';
     }
-}
 
 function init() {
     seoAndHeader();
