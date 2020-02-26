@@ -16,11 +16,16 @@ function addStyles() {
 
 function stripSiteVersionLabel() {
     const ver = document.querySelector(`.site_version`);
+    if (!ver) {
+        return;
+    }
+
     if (ver.classList.contains('site_version--local')) {
         ver.innerText = 'Локально';
-    } else if (ver.classList.contains('site_version--beta'))
+    } else if (ver.classList.contains('site_version--beta')) {
         ver.innerText = 'Бета версия';
     }
+}
 
 function init() {
     seoAndHeader();
