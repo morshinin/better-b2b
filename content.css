@@ -321,6 +321,8 @@ td.fname {
 
 .hint_edit .table-filled tbody tr {
     box-shadow: 3px 4px 6px rgba(0,0,0,.3);
+    overflow-y: scroll;
+    border-radius: 10px;
 }
 
 .hint_edit .table-filled.table-stripes tr:nth-child(2n).c1 td,
@@ -335,6 +337,7 @@ td.fname {
 .hint_edit .hint_list_form tbody {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: minmax(200px, 400px);
     gap: 30px;
 }
 

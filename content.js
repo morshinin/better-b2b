@@ -29,6 +29,7 @@ function stripSiteVersionLabel() {
 
 function init() {
     seoAndHeader();
+    tidyUpHintsEditPage();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
@@ -73,4 +74,59 @@ function getRidOfAllBullshit() {
     });
 }
 
+function tidyUpHintsEditPage() {
+	document.querySelector('h1.h3').innerText = 'Редактирование хинтов';
+	document.querySelector('#xtbody tr:first-child .fname').innerText = 'Искать по тексту';
+	document.querySelector('#xtbody tr:nth-child(3) .fname').innerText = 'Искать по имени хинта';
+	document.querySelector('title').innerText = 'Редактирование хинтов - Локально - B2B-Center';
+	document.querySelector('#page').classList.add('hint_edit');
+	document.querySelector('.hint_edit .form_thead_title').remove();
+
+	// Найти все элементы с красным инлайновым стилем
+	const spans = document.querySelectorAll('.hint_edit .hint_list_form td span');
+	spans.forEach(span => {
+		span.parentNode.style.position = 'relative';
+		if (span.hasAttribute('style')) {
+			span.style.color = 'inherit';
+			span.classList.add('hint_edit-span-lang');
+		}
+	});
+
+	const find_btn = document.querySelector('.hint_edit [value="Найти >>"]');
+
+	if (find_btn) {
+		find_btn.classList.add('btn-primary');
+		find_btn.value = 'Найти';
+	}
+
+	const form_label_create_hint = document.querySelectorAll('.hint_edit .form-horizontal .label-ctrl');
+
+	form_label_create_hint.forEach(label => {
+		if (label.innerText === 'Введите ключевое слово для новой подсказки:') {
+			label.style.display = 'none';
+		}
+	});
+
+	const red_spans = document.querySelectorAll('.hint_edit td span');
+
+	red_spans.forEach(span => {
+		if (span.style.color == 'red') {
+			span.style.color = 'inherit';
+		}
+	});
+
+	const new_window_disclaimer_hint_edit = document.querySelectorAll('.form-desc');
+
+	new_window_disclaimer_hint_edit.forEach(disclaimer => {
+		if (disclaimer.innerText === '(в новом окне)') {
+			disclaimer.style.display = 'none';
+		}
+	});
+
+	for (const el of document.querySelectorAll('.hint_edit .hint_list_form td')) {
+		if (el.hasAttribute('style')) {
+			el.innerHTML = el.innerHTML.replace(/ \/ /g,'');
+		}
+	}
+}
 
