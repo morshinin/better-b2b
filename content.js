@@ -36,7 +36,9 @@ function stripSiteVersionLabel() {
 
 function init() {
     seoAndHeader();
-    tidyUpHintsEditPage();
+    if (/.*b2b-center.*help.*/.test(page_url)) {
+        tidyUpHintsEditPage();
+    }
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
