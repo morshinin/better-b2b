@@ -36,7 +36,10 @@ function init() {
 }
 
 function seoAndHeader() {
-    document.querySelector('title').innerText = `${document.querySelector('h1').innerText} - Локально - B2B-Center`;
+    const title = document.querySelector('title');
+    if (title) {
+        title.innerText = `${document.querySelector('h1').innerText} - B2B-Center`;
+    }
     document.querySelector('.slide_down-content .inner .afake').after(document.querySelector('.header-nav-links'));
     document.querySelector('.header-title-platform').remove();
     document.querySelector('.header-logo').remove();
