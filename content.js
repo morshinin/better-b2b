@@ -6,6 +6,13 @@ function stripPageFooter() {
     document.querySelector('.page-footer').innerHTML = '<p class="txt-center">b2b-center.ru &copy 2020</p>';
 }
 
+function getElements() {
+   return {
+       h1: document.querySelector('h1'),
+       title: document.querySelector('title')
+   }
+}
+
 function addStyles() {
     const path = chrome.runtime.getURL('content.css');
     const style = document.createElement('link');
@@ -37,9 +44,10 @@ function init() {
 }
 
 function seoAndHeader() {
-    const title = document.querySelector('title');
-    if (title) {
-        title.innerText = `${document.querySelector('h1').innerText} - B2B-Center`;
+    const title = getElements().title;
+    const h1 = getElements().h1;
+    if (title && h1) {
+        title.innerText = `${h1.innerText} - B2B-Center`;
     }
     document.querySelector('.slide_down-content .inner .afake').after(document.querySelector('.header-nav-links'));
     document.querySelector('.header-title-platform').remove();
