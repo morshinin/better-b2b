@@ -176,6 +176,7 @@ body.light {
 .rtype h1.h3 {
     font-size: 4.8rem;
     margin-bottom: 2.4rem;
+    line-height: 1.2;
 }
 
 .c1, .c2, table .thead, table .thead h2 {
@@ -477,4 +478,8 @@ td.fname {
 .tilda_gen .form-desc {
     color: gray;
     font-size: 80%;
+}
+
+.accentBg {
+    background-color: #fff !important;
 }
