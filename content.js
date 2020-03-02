@@ -97,6 +97,19 @@ function tidyUpHintsEditPage() {
 	document.querySelector('#page').classList.add('hint_edit');
 	document.querySelector('.hint_edit .form_thead_title').remove();
 
+	function makeThingsSticky() {
+	    const table = document.querySelector('.hint_edit .table-filled');
+	    const selectAll = document.querySelector('.hint_edit .table-filled ~ p');
+	    const action = document.querySelector('.hint_edit .table-filled ~ p + p');
+	    let newDiv = document.createElement('div');
+	    newDiv.setAttribute('class', 'sticky_things');
+	    newDiv.appendChild(selectAll);
+	    newDiv.appendChild(action);
+	    table.appendChild(newDiv);
+    }
+
+    makeThingsSticky();
+
 	// Найти все элементы с красным инлайновым стилем
 	const spans = document.querySelectorAll('.hint_edit .hint_list_form td span');
 	spans.forEach(span => {
