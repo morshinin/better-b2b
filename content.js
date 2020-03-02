@@ -90,7 +90,7 @@ function getRidOfAllBullshit() {
 }
 
 function tidyUpHintsEditPage() {
-	document.querySelector('h1.h3').innerText = 'Редактирование хинтов';
+	document.querySelector('h1.h3').innerText = 'Хинты';
 	document.querySelector('#xtbody tr:first-child .fname').innerText = 'Искать по тексту';
 	document.querySelector('#xtbody tr:nth-child(3) .fname').innerText = 'Искать по имени хинта';
 	document.querySelector('title').innerText = 'Редактирование хинтов - Локально - B2B-Center';
