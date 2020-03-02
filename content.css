@@ -483,3 +483,13 @@ td.fname {
 .accentBg {
     background-color: #fff !important;
 }
+
+.bulletins h3 + .row > .col6:first-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, auto));
+    grid-gap: 10px;
+}
+
+.bulletins h3 + .row > .col6:first-child p {
+    margin: 0;
+}

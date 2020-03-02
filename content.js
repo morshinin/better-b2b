@@ -39,6 +39,9 @@ function init() {
     if (/.*b2b-center.*help.*/.test(page_url)) {
         tidyUpHintsEditPage();
     }
+    if (/.*b2b-center.*bulletins.*/.test(page_url)) {
+        tidyBulletinsPage();
+    }
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
@@ -140,3 +143,6 @@ function tidyUpHintsEditPage() {
 	}
 }
 
+function tidyBulletinsPage() {
+    document.querySelector('#page').classList.add('bulletins');
+}
