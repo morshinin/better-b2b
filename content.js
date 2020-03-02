@@ -35,13 +35,13 @@ function stripSiteVersionLabel() {
 }
 
 function init() {
-    seoAndHeader();
     if (/.*b2b-center.*help.*/.test(page_url)) {
         tidyUpHintsEditPage();
     }
     if (/.*b2b-center.*bulletins.*/.test(page_url)) {
         tidyBulletinsPage();
     }
+    seoAndHeader();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
@@ -144,5 +144,6 @@ function tidyUpHintsEditPage() {
 }
 
 function tidyBulletinsPage() {
+    document.querySelector('h1.h3').innerText = 'Рассылка бюллетеней';
     document.querySelector('#page').classList.add('bulletins');
 }

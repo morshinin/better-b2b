@@ -493,3 +493,7 @@ td.fname {
 .bulletins h3 + .row > .col6:first-child p {
     margin: 0;
 }
+
+.page-footer {
+    padding: 10px;
+}
