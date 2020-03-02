@@ -312,10 +312,6 @@ td.fname {
 }
 
 /* Редактирование хинтов */
-.hint_edit .page-main {
-    padding-top: 75px;
-}
-
 .hint_edit .inner {
     max-width: 100%;
 }
@@ -345,6 +341,18 @@ td.fname {
 @media (max-width: 1600px) {
     .hint_edit .hint_list_form tbody {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hint_edit .hint_list_form tbody {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hint_edit .hint_list_form tbody {
+        grid-template-columns: 1fr;
     }
 }
 
