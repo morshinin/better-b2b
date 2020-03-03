@@ -43,11 +43,48 @@ function init() {
         tidyBulletinsPage();
     }
 
-    seoAndHeader();
+	if (/.*b2b-center.*admin\/firms.*/.test(page_url)) {
+		tidyFirmsPage();
+	}
+
+
+		seoAndHeader();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
     addStyles();
+}
+
+function tidyFirmsPage() {
+	document.querySelector('#page').classList.add('firms');
+	document.querySelector('h1.h3').innerText = 'Список организаций';
+	const div = document.createElement('div');
+	const div2 = document.createElement('div');
+	const link = document.createElement('a');
+	link.classList.add('btn');
+	link.innerText = 'Показать больше настроек';
+	link.setAttribute('href', '#0');
+	div2.setAttribute('class', 'firms-show_additional_search_settings_link');
+	div2.appendChild(link);
+
+	div.setAttribute('class', 'firms-additional_search_settings');
+
+	const search_form = document.querySelector('#new_org_form');
+	const fieldset = search_form.querySelector('fieldset');
+	const fieldset_fields = fieldset.querySelectorAll(':scope > div');
+
+	for (const el of fieldset_fields) {
+		if (!el.classList.contains('find_field')) {
+			div.appendChild(el);
+		}
+	}
+
+	link.addEventListener('click', () => {
+		div.classList.toggle('firms-additional_search_settings--active');
+	});
+
+	search_form.appendChild(div2);
+	search_form.appendChild(div);
 }
 
 function seoAndHeader() {

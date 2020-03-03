@@ -399,6 +399,10 @@ td.fname {
     font-size: 80%;
 }
 
+.table-filled tbody tr td {
+    background-color: #fff;
+}
+
 .table-filled tbody tr td:first-child {
     padding: 5px 5px 0 10px;
 }
@@ -519,4 +523,12 @@ td.fname {
 
 .page-footer {
     padding: 10px;
+}
+
+.firms-additional_search_settings {
+    display: none;
+}
+
+.firms-additional_search_settings--active {
+    display: block;
 }
