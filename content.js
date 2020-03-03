@@ -48,7 +48,7 @@ function init() {
 	}
 
 
-		seoAndHeader();
+	seoAndHeader();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
@@ -104,6 +104,7 @@ function seoAndHeader() {
             ico.remove();
         }
     }
+
 }
 
 function getRidOfAllBullshit() {
@@ -124,6 +125,23 @@ function getRidOfAllBullshit() {
     user_ico.addEventListener('click', () => {
         all_user_shit.classList.toggle('all_user_shit--active');
     });
+
+
+	addUsefulLinksToUserMenuInHeader();
+
+	/**
+	 * добавить полезные ссылки в меню пользователя
+	 */
+	function addUsefulLinksToUserMenuInHeader() {
+		const menu = all_user_shit;
+		const link_firms = document.createElement('a');
+		link_firms.setAttribute('href', 'https://b2b-center.ru.test/admin/firms.html');
+		link_firms.innerText = 'Список организаций';
+
+		if (menu) {
+			menu.appendChild(link_firms);
+		}
+	}
 }
 
 function tidyUpHintsEditPage() {
