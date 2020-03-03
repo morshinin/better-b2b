@@ -394,8 +394,13 @@ td.fname {
 
 .hint_edit-span-lang {
     position: absolute;
-    right: 0;
+    right: 10px;
+    top: 10px;
     font-size: 80%;
+}
+
+.table-filled tbody tr td:first-child {
+    padding: 5px 5px 0 10px;
 }
 
 .hint_edit #row_id_4,
