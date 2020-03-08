@@ -2,6 +2,12 @@ const page_url = document.URL;
 
 init();
 
+function setElements() {
+    const main = {
+        hints_table: ''
+    }
+}
+
 function stripPageFooter() {
     document.querySelector('.page-footer').innerHTML = '<p class="txt-center">b2b-center.ru &copy 2020</p>';
 }
@@ -157,6 +163,30 @@ function getRidOfAllBullshit() {
 }
 
 function tidyUpHintsEditPage() {
+    /* Найти элементы */
+    /* Форма с хинтами */
+    const all_hints = document.querySelectorAll('.hint_list_form tbody tr');
+    const hints_content = document.querySelectorAll('.table-filled tbody tr td:last-child');
+
+    /* Перенести индикатор количества найденных подсказок */
+    function moveIndicator() {
+        const indicator = document.querySelector('.nav-pills ~ p');
+        indicator.classList.add('hint_list-indicator');
+        const th = document.querySelector('.table-filled thead tr');
+        const new_th = document.createElement('th');
+        new_th.classList.add('hint_list-indicator_wrapper');
+        new_th.appendChild(indicator);
+        th.appendChild(new_th);
+    }
+
+    moveIndicator();
+
+    /* Добавить класс контенту каждой карточки хинта*/
+    hints_content.forEach(el => {
+        el.classList.add('card-body');
+        el.querySelectorAll('a')[0].classList.add('card-title');
+    });
+
 	document.querySelector('h1.h3').innerText = 'Хинты';
 	document.querySelector('#xtbody tr:first-child .fname').innerText = 'Искать по тексту';
 	document.querySelector('#xtbody tr:nth-child(3) .fname').innerText = 'Искать по имени хинта';
@@ -177,12 +207,31 @@ function tidyUpHintsEditPage() {
 
     makeThingsSticky();
 
+    const hint_export_boi = document.querySelectorAll('.hint_export_to_production');
+    hint_export_boi.forEach(el => {
+        if (el.classList.contains('hint_edit-span-lang')) {
+            el.classList.remove('hint_edit-span-lang');
+        }
+        el.classList.add('btn', 'card-btn');
+    });
+
+    all_hints.forEach(hint => {
+        hint.classList.add('card');
+        const hint_export_btn = hint.querySelectorAll('a');
+
+        // const hint_content = hint.innerText;
+        // const date = hint_content.match(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/);
+        // hint_content.replace(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/g, '');
+        // const date_container = document.createElement('span');
+        // hint.appendChild(date_container);
+        // date_container.innerText = date[0];
+        hint_export_btn[1].classList.add('btn', 'card-btn');
+    });
+
 	// Найти все элементы с красным инлайновым стилем
 	const spans = document.querySelectorAll('.hint_edit .hint_list_form td span');
 	spans.forEach(span => {
-		span.parentNode.style.position = 'relative';
 		if (span.hasAttribute('style')) {
-			span.style.color = 'inherit';
 			span.classList.add('hint_edit-span-lang');
 		}
 	});
@@ -202,14 +251,6 @@ function tidyUpHintsEditPage() {
 		}
 	});
 
-	const red_spans = document.querySelectorAll('.hint_edit td span');
-
-	red_spans.forEach(span => {
-		if (span.style.color == 'red') {
-			span.style.color = 'inherit';
-		}
-	});
-
 	const new_window_disclaimer_hint_edit = document.querySelectorAll('.form-desc');
 
 	new_window_disclaimer_hint_edit.forEach(disclaimer => {
@@ -218,8 +259,8 @@ function tidyUpHintsEditPage() {
 		}
 	});
 
-	for (const el of document.querySelectorAll('.hint_edit .hint_list_form td')) {
-		if (el.hasAttribute('style')) {
+	for (const el of document.querySelectorAll('.card-body')) {
+		if (!el.hasAttribute('style')) {
 			el.innerHTML = el.innerHTML.replace(/ \/ /g,'');
 		}
 	}

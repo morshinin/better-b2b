@@ -255,6 +255,10 @@ td.fname {
     display: none;
 }
 
+#export_hints_form > table {
+    width: 100% !important;
+}
+
 #trade_object_form .hint,
 [action="/market/edit.html?action=docs&do=upload_doc&id=45296"] .hint {
     color: #bebebe;
@@ -265,6 +269,11 @@ td.fname {
     font-size: 48px;
 }
 
+.form-control_table tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .form-control_table #help_text_id p {
     width: 680px;
 }
@@ -272,6 +281,19 @@ td.fname {
 /* Редактирование хинтов */
 .hint_list_form tbody tr.c1 td {
     background-color: #fff;
+}
+
+.hint_edit .hint_list-indicator {
+    margin: 0;
+}
+
+.hint_edit .table-filled .hint_list-indicator_wrapper {
+    width: 100% !important;
+    text-align: right !important;
+}
+
+.hint_edit .table-filled .hint_list-indicator_wrapper {
+    padding-right: 0;
 }
 
 .messagePanel .btn-primary {
@@ -375,13 +397,23 @@ td.fname {
     color: #2283c3;
 }
 
+.hint_edit td.fname {
+    width: auto !important;
+}
+
 .hint_edit .table-filled thead th,
 .hint_edit .table-filled thead td {
     font-weight: normal;
+    width: auto !important;
 }
 
 .hint_edit .nav-pills + table {
     margin: 0;
+}
+
+.hint_edit .nav-pills + table tr {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .hint_edit .table-filled tbody:before {
@@ -393,6 +425,7 @@ td.fname {
 }
 
 .hint_edit-span-lang {
+    color: inherit !important;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -405,6 +438,24 @@ td.fname {
 
 .table-filled tbody tr td:first-child {
     padding: 5px 5px 0 10px;
+}
+
+.table-filled tbody tr td:last-child {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-filled tbody tr td:last-child a:first-child {
+    font-size: 150%;
+}
+
+.table-filled tbody tr td:last-child a:nth-child(2) {
+    align-self: flex-start;
+}
+
+.hint_export_to_production {
+    order: 1;
 }
 
 .hint_edit #row_id_4,
@@ -525,6 +576,22 @@ td.fname {
 
 .page-footer {
     padding: 10px;
+}
+
+.card {
+    position: relative;
+    padding-right: 30px;
+}
+
+.card-btn {
+    margin: 0;
+    align-self: flex-start;
+    order: 1;
+}
+
+.card-btn:first-of-type {
+    position: absolute;
+    bottom: 15px;
 }
 
 .firms-additional_search_settings {
