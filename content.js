@@ -181,6 +181,38 @@ function tidyUpHintsEditPage() {
 
     moveIndicator();
 
+    /* Для каждой карточки перенести чекбокс в зону контента */
+    function moveCardCheckbox() {
+        const card = document.querySelector('.card');
+        const date = card.innerText.match(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/);
+        console.log(date[0]);
+        const header = document.createElement('header');
+        const footer = document.createElement('footer');
+        const content = document.createElement('div');
+        const checkbox = document.querySelector(`.card .hint_export_checkbox`);
+        document.querySelector('.card td:first-child').remove();
+        const body = document.querySelector(`.card .card-body`);
+        const title = body.querySelector('a:first-child');
+        const btn_export_boi = document.querySelector('.card .hint_export_to_production');
+        const btn_export = document.querySelectorAll('.card a')[1];
+        const br = document.querySelectorAll('.card br');
+        const real_title = document.querySelector('.card-body b');
+        footer.classList.add('card-footer');
+        header.classList.add('card-header');
+        content.classList.add('card-content');
+        br.forEach(el => {
+            el.remove();
+        });
+        footer.appendChild(btn_export);
+        footer.appendChild(btn_export_boi);
+        header.appendChild(checkbox);
+        header.appendChild(title);
+        content.appendChild(real_title);
+        body.prepend(header);
+        body.appendChild(content);
+        body.appendChild(footer);
+    }
+
     /* Добавить класс контенту каждой карточки хинта*/
     hints_content.forEach(el => {
         el.classList.add('card-body');
@@ -264,6 +296,8 @@ function tidyUpHintsEditPage() {
 			el.innerHTML = el.innerHTML.replace(/ \/ /g,'');
 		}
 	}
+
+    moveCardCheckbox();
 }
 
 function tidyBulletinsPage() {
