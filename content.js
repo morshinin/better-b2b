@@ -183,12 +183,13 @@ function tidyUpHintsEditPage() {
 
     /* Для каждой карточки перенести чекбокс в зону контента */
     function moveCardCheckbox() {
+        const reg_match = /(\d{2}\.){2}\d{4} \d{2}:\d{2}/;
         const card = document.querySelector('.card');
-        const date = card.innerText.match(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/);
-        console.log(date[0]);
+        const date = card.innerText.match(reg_match);
         const header = document.createElement('header');
         const footer = document.createElement('footer');
         const content = document.createElement('div');
+        const meta = document.createElement('p');
         const checkbox = document.querySelector(`.card .hint_export_checkbox`);
         document.querySelector('.card td:first-child').remove();
         const body = document.querySelector(`.card .card-body`);
@@ -203,10 +204,13 @@ function tidyUpHintsEditPage() {
         br.forEach(el => {
             el.remove();
         });
+        meta.insertAdjacentText('beforeend', date[0]);
+        // card.innerHTML = card.innerHTML.replace(reg_match, '');
         footer.appendChild(btn_export);
         footer.appendChild(btn_export_boi);
         header.appendChild(checkbox);
         header.appendChild(title);
+        header.appendChild(meta);
         content.appendChild(real_title);
         body.prepend(header);
         body.appendChild(content);
