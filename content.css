@@ -534,3 +534,22 @@ td.fname {
 .firms-additional_search_settings--active {
     display: block;
 }
+
+.edit_user .c2,
+.edit_user .c1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_user .hint {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_user .fname {
+    width: auto !important;
+}
+
+.edit_user .form-control_table {
+    max-width: 680px;
+}

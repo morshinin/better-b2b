@@ -47,12 +47,19 @@ function init() {
 		tidyFirmsPage();
 	}
 
+	if (/.*b2b-center.*edit_user.*/.test(page_url)) {
+		tidyEditUserPage();
+	}
 
 	seoAndHeader();
     getRidOfAllBullshit();
     stripSiteVersionLabel();
     stripPageFooter();
     addStyles();
+}
+
+function tidyEditUserPage() {
+	document.querySelector('#page').classList.add('edit_user');
 }
 
 function tidyFirmsPage() {
