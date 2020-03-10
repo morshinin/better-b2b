@@ -133,13 +133,18 @@ function getRidOfAllBullshit() {
 	 * добавить полезные ссылки в меню пользователя
 	 */
 	function addUsefulLinksToUserMenuInHeader() {
+		const host = window.location.hostname;
 		const menu = all_user_shit;
 		const link_firms = document.createElement('a');
-		link_firms.setAttribute('href', 'https://b2b-center.ru.test/admin/firms.html');
+		const link_user_info = document.createElement('a');
+		link_firms.setAttribute('href', `/admin/firms.html`);
 		link_firms.innerText = 'Список организаций';
+		link_user_info.setAttribute('href', `/personal/edit_user.html`);
+		link_user_info.innerText = 'Данные пользователя';
 
 		if (menu) {
 			menu.appendChild(link_firms);
+			menu.appendChild(link_user_info);
 		}
 	}
 }
