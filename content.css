@@ -116,6 +116,7 @@ body.light {
 
 #page {
     min-width: initial;
+    height: 100% !important;
 }
 
 .wrapper.featured-layout {
@@ -243,6 +244,10 @@ td.fname {
 
 .notice .imp {
     color: green;
+}
+
+.notice-wrap .notice--large {
+    width: 400px;
 }
 
 /* Утилиты */
