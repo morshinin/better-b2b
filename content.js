@@ -241,7 +241,9 @@ function tidyUpHintsEditPage() {
 	    table.appendChild(newDiv);
     }
 
-    makeThingsSticky();
+	if (!/.*beta.b2b-center.*help.*/.test(page_url)) {
+		makeThingsSticky();
+	}
 
     const hint_export_boi = document.querySelectorAll('.hint_export_to_production');
     hint_export_boi.forEach(el => {
@@ -251,16 +253,11 @@ function tidyUpHintsEditPage() {
         el.classList.add('btn', 'card-btn');
     });
 
-    all_hints.forEach(hint => {
+	/* Добавить всем карточкам хинтов класс card */
+	all_hints.forEach(hint => {
         hint.classList.add('card');
         const hint_export_btn = hint.querySelectorAll('a');
 
-        // const hint_content = hint.innerText;
-        // const date = hint_content.match(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/);
-        // hint_content.replace(/(\d{2}\.){2}\d{4} \d{2}:\d{2}/g, '');
-        // const date_container = document.createElement('span');
-        // hint.appendChild(date_container);
-        // date_container.innerText = date[0];
         hint_export_btn[1].classList.add('btn', 'card-btn');
     });
 
